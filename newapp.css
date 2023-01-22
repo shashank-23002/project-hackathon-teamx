@@ -1,0 +1,320 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope&family=Open+Sans:wght@300&family=Oxygen&family=Roboto:wght@300&family=Ubuntu&display=swap'); */
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body,html {
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Manrope', sans-serif;
+}
+
+.navbar {
+    /* border:solid 3px red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 48px;
+}
+
+.logo {
+    /* border: solid 2px green; */
+    width: 120px;
+    height: 87px;
+}
+
+/* for the logo image */
+.logoimage {
+    width: 100%;
+    height: 100%;
+}
+
+/* navigation bar options  */
+/* .nav-options { */
+    /* border: solid 3px red; */
+/* } */
+
+.nav-options div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: solid 1px rgb(7, 7, 7); */
+    border-radius: 6px;
+    width: 100px;
+}
+
+.nav-options div:hover {
+    background-color: rgb(0, 0, 0);
+    /* border: none; */
+    color: white;
+}
+
+.account {
+    width: 15px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.side-menu {
+    width: 15px;
+    height: 30px;
+}
+
+
+/* corosuel container css */
+.corosuel-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* border:solid 5px green; */
+    height: 700px;
+}
+
+.outermost-container::before {
+    content: " ";
+    position: absolute;
+    background: url('./image/jeremy-perkins-uhjiu8FjnsQ-unsplash.jpg') no-repeat center center/cover;
+    opacity:100;
+    /* filter: blur(5px); */
+    filter: brightness(55%);
+    height: 743px;
+    width: 100%;
+    z-index: -1;
+}
+
+.corosuel-inner-container {
+    /* border:solid 5px rgb(217, 1, 255); */
+    background: url(https://c4.wallpaperflare.com/wallpaper/22/240/855/texture-gradient-simple-background-blue-wallpaper-preview.jpg) no-repeat center center/cover;
+    text-align: center;
+    color:rgb(151, 151, 151);
+    width: 960px;
+    margin: 0px auto;
+    height: 522px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px #b80101;
+}
+
+.navbar{
+    /* border: 2px solid yellow; */
+    height: 80px;
+    margin-top: 17px;
+
+}
+.stockinfo{
+    display: inline-block;
+    position: absolute;
+    width: 25%;
+    left: 37.5%;
+    font-size: 24px;
+    font-family: cursive;
+    /* border: 2px solid green; */
+}
+.price{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* border: 2px solid red; */
+    text-align: left;
+    height: 40px;
+    display: inline;
+    position: absolute;
+    top: 130px;
+    left: 340px;
+    width: 300px;
+    /* padding-left: 0px ; */
+}
+.dayhigh{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* border: 2px solid red; */
+    text-align: left;
+    height: 40px;
+    display: inline;
+    position:absolute;
+    top: 203px;
+    left: 340px;
+    width: 300px;
+    /* padding-left: 0px ; */
+}
+.daylow{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* border: 2px solid red; */
+    text-align: left;
+    height: 40px;
+    display: inline;
+    position: absolute;
+    width: 300px;
+    left: 340px;
+    top: 276px;
+    /* padding-left: 0px ; */
+}
+.fiftyday{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* border: 2px solid red; */
+    text-align: left;
+    height: 40px;
+    display: inline;
+    position: absolute;
+    width: 400px;
+    left: 340px;
+    top: 349px;
+    /* padding-left: 0px ; */
+}
+
+.recommendation{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* border: 2px solid red; */
+    text-align: left;
+    height: 40px;
+    display: inline;
+    position: absolute;
+    width: 400px;
+    left: 340px;
+    top: 416px;
+    /* padding-left: 0px ; */
+}
+.footer{
+    /* border: 2px solid red; */
+    margin-top: 385px;
+    color:rgb(215, 137, 137);
+}
+.graph{
+ /* border: 2px solid pink; */
+ display: block;
+ position: absolute;
+ width: 452px;
+ height: 357px;
+ right: 312px;
+ top: 116px;
+ border-radius: 20px;
+}
+.graph img{
+    width: 452px;
+    height: 357px;
+    border-radius: 20px;
+}
+.innerlogo img{
+    /* border: 2px solid red; */
+    width: 100px ;
+    height: 76px;
+    margin-left: 150px;
+    margin-top: 5px;
+    border-radius: 12px;
+}
+
+.useless 
+{
+    height: 20px;
+
+}
+
+/* card container */
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0px auto;
+    /* border:solid 5px rgb(5, 224, 202); */
+    width: 100%;
+    height: 160px;
+}
+
+/* corosuel image css */
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* card css */
+.card {
+    /* border:solid 5px rgb(250, 6, 38); */
+    width: 200px;
+    height: 110px;
+    position: relative;
+    top: 0px;
+    box-shadow: 3px 3px 10px #ffffff;
+    border-radius: 10px;
+    transition: all 0.10s ease-in 0.075s;
+    /* opacity: 0.5; */
+}
+
+.card:hover {
+    top: -10px;
+    opacity: 100;
+    box-shadow: 3px 3px 10px #c92cf0;
+}
+
+.feature-container {
+    /* border: solid 3px red; */
+    width: 100%;
+    height: 1500px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.feature-headline {
+    /* border: solid 3px black; */
+    font-weight: bold;
+    font-size: 30px;
+    height:65px;
+}
+
+.feature-inner-container {
+    /* border: solid 3px black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+    
+}
+
+.feature-image-container {
+    /* border: solid 3px blue; */
+    width: 540px;
+    height: 360px;
+}
+.feature-image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.feature-text-container {
+
+    /* border: solid 3px yellow; */
+    width: 645px;
+    flex-direction: column;
+    height: 360px;
+}
+
+.bold-heading{
+    /* border: solid 3px red; */
+    width:100%;
+    font-size: 25px;
+    font-weight: bold;
+    height:75px;
+}
+.light-text{
+    /* border: solid 3px blue; */
+    width:100%;
+    font-size: 20px;
+    height:75px;
+}
+
+/* utility classes */
+.flexclass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

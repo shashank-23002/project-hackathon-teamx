@@ -1,0 +1,127 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+/https://official-joke-api.appspot.com/random_joke
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+import logo from './logo.svg';
+import './App.css';
+import React, { useState } from "react";
+import Axios from "axios";
+
+function App() {
+  const arr=["AAPL","AMZN"];
+  const obj = {
+    0: "card1",
+    1: "card2",
+    2: "card3",
+  }
+  
+  const [price, setPrice] = useState("");
+  const [dayhigh, dayhighPrice]=useState("");
+  const [daylow, daylowPrice]=useState("");
+  const [name, stockname]=useState("");
+  const encodedParams = new URLSearchParams();
+  const getData = () => {
+    // Axios.get("https://official-joke-api.appspot.com/random_joke").then((response)=>
+    // {
+    //   console.log(response);
+    //   setJoke(response.data.setup+ " " + response.data.punchline);
+    // })
+    function getKeyByValue(object, value) {
+      return Object.keys(object).find(key => object[key] === value);
+    }
+
+    function settemp(clicked_id) {
+      var temp=clicked_id
+    }
+  
+    // console.log(getKeyByValue(obj,""));
+    var temp="";
+    document.getElementById("card1").addEventListener("click",temp="card1")
+    document.getElementById("card2").addEventListener("click",temp="card2")
+    encodedParams.append("symbol", arr[getKeyByValue(obj,temp)]);
+    
+    // encodedParams.append("period", "1d");
+
+    const options = {
+      method: 'POST',
+      url: 'https://yfinance-stock-market-data.p.rapidapi.com/stock-info',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-RapidAPI-Key': '5e1c006ed9msh14b035e756855ccp1246f7jsne55d63814853',
+        'X-RapidAPI-Host': 'yfinance-stock-market-data.p.rapidapi.com'
+      },
+      data: encodedParams
+    };
+
+
+    Axios.request(options).then(function (response) {
+      const {data}=response?.data;
+      // console.log(data);
+      setPrice(data?.currentPrice);
+    }).catch(function (error) {
+      console.error(error);
+    });
+    
+    Axios.request(options).then(function (response) {
+      const {data}=response?.data;
+      // console.log(data);
+      dayhighPrice(data?.dayHigh);
+    }).catch(function (error) {
+      console.error(error);
+    });
+
+    Axios.request(options).then(function (response) {
+      const {data}=response?.data;
+      // console.log(data);
+      daylowPrice(data?.dayLow);
+    }).catch(function (error) {
+      console.error(error);
+    });
+
+    Axios.request(options).then(function (response) {
+      const {data}=response?.data;
+      // console.log(data);
+      stockname(data?.longName);
+    }).catch(function (error) {
+      console.error(error);
+    });
+
+  }
+
+  return (
+    <div className="App">
+      <h1>Stock Info</h1>
+      <button onClick={getData} id="card1">Apple Data</button>
+      <button onClick={getData} id="card2">Amazon Data</button>
+      <h2>Stock Name: {name}</h2>
+      <h2>Current Price: {price}</h2>
+      <h2>Day high: {dayhigh}</h2>
+      <h2>Day Low: {daylow}</h2>
+    </div>
+  );
+}
+
+export default App;
+
